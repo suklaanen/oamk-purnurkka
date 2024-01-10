@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20240110 22:31:43.945" rpa="false" schemaversion="4">
+<suite id="s1" name="Cow" source="C:\ladyvsc\repos\reso-ryhmis\oamk-purnurkka\robot_framework_and_github_actions\robot\cow.robot">
+<test id="s1-t1" name="Test Cowsay Says Meow" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240110 22:31:44.107" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20240110 22:31:44.106" endtime="20240110 22:31:49.255"/>
+</kw>
+<kw name="Cow says">
+<arg>Meow</arg>
+<kw name="Go to Base URL">
+<arg>${sayThis}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/${sayThis}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240110 22:31:49.256" level="INFO">Opening url 'http://localhost:80/Meow'</msg>
+<status status="PASS" starttime="20240110 22:31:49.256" endtime="20240110 22:31:49.310"/>
+</kw>
+<status status="PASS" starttime="20240110 22:31:49.256" endtime="20240110 22:31:49.310"/>
+</kw>
+<status status="PASS" starttime="20240110 22:31:49.255" endtime="20240110 22:31:49.310"/>
+</kw>
+<kw name="Get response">
+<var>${response}</var>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${response}</var>
+<arg>return document.body.textContent</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240110 22:31:49.311" level="INFO">Executing JavaScript:
+return document.body.textContent
+Without any arguments.</msg>
+<msg timestamp="20240110 22:31:49.319" level="INFO">${response} =   ____| Meow |  ====    \     \       ^__^       (oo)\_______       (__)\       )\/\           ||----w |           ||     ||</msg>
+<status status="PASS" starttime="20240110 22:31:49.311" endtime="20240110 22:31:49.319"/>
+</kw>
+<msg timestamp="20240110 22:31:49.319" level="INFO">${response} =   ____| Meow |  ====    \     \       ^__^       (oo)\_______       (__)\       )\/\           ||----w |           ||     ||</msg>
+<status status="PASS" starttime="20240110 22:31:49.310" endtime="20240110 22:31:49.319"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Response: ${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240110 22:31:49.320" level="INFO">Response:   ____| Meow |  ====    \     \       ^__^       (oo)\_______       (__)\       )\/\           ||----w |           ||     ||</msg>
+<status status="PASS" starttime="20240110 22:31:49.320" endtime="20240110 22:31:49.320"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${response}</arg>
+<arg>Meow</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240110 22:31:49.320" endtime="20240110 22:31:49.320"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240110 22:31:51.321" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240110 22:31:49.320" endtime="20240110 22:31:51.321"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240110 22:31:51.321" endtime="20240110 22:31:53.880"/>
+</kw>
+<doc>Cowsay Says Meow</doc>
+<status status="PASS" starttime="20240110 22:31:44.106" endtime="20240110 22:31:53.881"/>
+</test>
+<doc>Cow Says Meow</doc>
+<status status="PASS" starttime="20240110 22:31:43.946" endtime="20240110 22:31:53.881"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Cow">Cow</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
